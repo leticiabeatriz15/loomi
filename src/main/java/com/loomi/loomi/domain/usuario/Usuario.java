@@ -22,6 +22,15 @@ public class Usuario {
 
     private String senha;
 
+    public Usuario (String nome, String senha){
+        this.nome = nome;
+        this.senha = senha;
+    }
+
+    public Usuario (){
+
+    }
+    
     public UUID getId() {
         return id;
     }

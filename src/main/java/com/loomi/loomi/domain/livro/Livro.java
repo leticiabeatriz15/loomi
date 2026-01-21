@@ -1,15 +1,18 @@
 package com.loomi.loomi.domain.livro;
 
+import com.loomi.loomi.domain.enums.SecoesEnum;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Table(name = "livros")
 @Entity
 public class Livro {
-    
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
@@ -18,15 +21,15 @@ public class Livro {
 
     private String nome;
 
-    private String status;
+    private SecoesEnum secoes;
 
     @Column(nullable = false)
     private Integer andamento;
 
-    public Livro(String isbn, String nome, String status, Integer andamento){
+    public Livro(String isbn, String nome, SecoesEnum secoes, Integer andamento){
         this.isbn = isbn;
         this.nome = nome;
-        this.status = status;
+        this.secoes = secoes;
         this.andamento = andamento;
     }
 
@@ -58,12 +61,12 @@ public class Livro {
         this.nome = nome;
     }
 
-    public String getStatus() {
-        return status;
+    public SecoesEnum getSecoes() {
+        return secoes;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatus(SecoesEnum secoes) {
+        this.secoes = secoes;
     }
 
     public Integer getAndamento() {
@@ -73,7 +76,5 @@ public class Livro {
     public void setAndamento(Integer andamento) {
         this.andamento = andamento;
     }
-
-    
 
 }

@@ -1,6 +1,6 @@
 package com.loomi.loomi.domain.enums;
 
-public enum SeçõesEnum  {
+public enum SecoesEnum  {
     NA_FILA,
     PRIMEIRO_PASSO,
     IMERSIVO,
