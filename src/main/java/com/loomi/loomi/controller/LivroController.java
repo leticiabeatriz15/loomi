@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.loomi.loomi.domain.livro.Livro;
 import com.loomi.loomi.domain.livro.LivroRepository;
 import com.loomi.loomi.services.LivroService;
+import com.loomi.loomi.dto.LivroDto;
 
 import jakarta.validation.Valid;
 
@@ -22,8 +23,9 @@ public class LivroController {
 
 
     @PostMapping
-    public ResponseEntity<Livro> criarLivro(@RequestBody @Valid Livro livro) {
-        livroService.criarLivro(livro);
+    public ResponseEntity<Livro> criarLivro(@RequestBody @Valid LivroDto livroDto) {
+        Livro livro = new Livro();
+        livro = livroService.criarLivro(livro);
 
         return ResponseEntity.ok(livro);
     }
