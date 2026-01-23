@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -57,6 +57,28 @@ export const usuarioService = {
   
   // Deletar usuário
   deletarUsuario: (id) => api.delete(`/usuario/${id}`),
+}
+
+export const authService = {
+  // Login
+  login: (loginData) => api.post('/auth/login', loginData),
+  
+  // Logout
+  logout: () => {
+    localStorage.removeItem('usuario')
+    localStorage.removeItem('token')
+  },
+  
+  // Verificar se está autenticado
+  isAuthenticated: () => {
+    return !!localStorage.getItem('usuario')
+  },
+  
+  // Obter usuário atual
+  getCurrentUser: () => {
+    const usuario = localStorage.getItem('usuario')
+    return usuario ? JSON.parse(usuario) : null
+  },
 }
 
 export default api
