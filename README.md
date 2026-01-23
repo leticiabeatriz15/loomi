@@ -274,13 +274,13 @@ npm run dev
 
 Este projeto está sob licença MIT.
 
-## 🤝 Contribuindo
+## 👥 Desenvolvedores
 
-Contribuições são bem-vindas! Por favor, sinta-se à vontade para abrir issues e enviar pull requests.
+Este projeto foi desenvolvido por:
 
-## 📧 Contato
-
-Para dúvidas ou sugestões, entre em contato através dos canais disponíveis.
+- **Christian David** - [@ChrisDav05](https://github.com/ChrisDav05)
+- **Emanuelle de Carvalho** - [@MannuuEmanuelle](https://github.com/MannuuEmanuelle)
+- **Letícia Beatriz** - [@leticiabeatriz15](https://github.com/leticiabeatriz15)
 
 ---
 
